@@ -12,7 +12,7 @@
 (def main-page
   [:html
    [:head
-    [:title "Minimal Webapp"]]
+    [:title "Material Reagent Demo!"]]
    [:body
     [:div#app]
     (include-js "js/main.js")]])

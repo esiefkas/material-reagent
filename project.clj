@@ -17,7 +17,8 @@
                  [reagent "0.8.1"]
 
                  ;; Emacs integration
-                 [cider/piggieback "0.3.10"]]
+                 [cider/piggieback "0.3.10"]
+                 [figwheel-sidecar "0.5.17"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-figwheel "0.5.17"]]
@@ -37,5 +38,5 @@
 
   :uberjar-name "material-reagent-standalone.jar"
   :profiles {:uberjar {:aot :all
-                       :main minimal-webapp.server
+                       :main material-reagent.server
                        :hooks [leiningen.cljsbuild]}})
