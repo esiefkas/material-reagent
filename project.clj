@@ -5,24 +5,25 @@
             :url "http://www.opensource.org/licenses/mit-license.php"}
 
   :dependencies [;; Language
-                 [org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.93"]
+                 [org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.10.439"]
 
                  ;; Server
-                 [compojure "1.5.1"]
+                 [compojure "1.6.1"]
                  [hiccup "1.0.5"]
                  [ring/ring-jetty-adapter "1.5.0"]
 
                  ;; Client
-                 [reagent "0.5.1"]
+                 [reagent "0.8.1"]
 
                  ;; Emacs integration
-                 [com.cemerick/piggieback "0.2.1"]
-                 [figwheel-sidecar "0.5.4-7"]]
+                 [cider/piggieback "0.3.10"]]
 
-  :plugins [[lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.4-7"]]
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-figwheel "0.5.17"]]
 
+  :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
+ 
   :cljsbuild {:builds [{:id "main"
                         :source-paths ["src"]
                         :figwheel true

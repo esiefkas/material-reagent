@@ -4,3 +4,4 @@
 figwheel_server.log
 resources/public
 target
+/.rebel_readline_history
