@@ -32,26 +32,3 @@
   (route/not-found (hiccup/html not-found-page)))
 
 (def site (handler/site app))
-
-;;;; Managing the server in the REPL or from 'lein run'
-
-(defonce ^:dynamic server nil)
-
-(defn stop
-  []
-  (when server
-    (.stop server)))
-
-(defn start
-  [& [port]]
-  (stop)
-  (alter-var-root
-    #'server
-    (constantly
-      (jetty/run-jetty #'site
-                       {:port (Long. (or port 5000))
-                        :join? false}))))
-
-(defn -main
-  [& [port]]
-  (start port))

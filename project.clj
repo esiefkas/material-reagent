@@ -12,7 +12,7 @@
                  [compojure "1.6.1"]
                  [hiccup "1.0.5"]
                  [ring/ring-jetty-adapter "1.5.0"]
-
+                 
                  ;; Client
                  [reagent "0.8.1"]
 
@@ -36,7 +36,8 @@
 
   :clean-targets ^{:protect false} ["resources/public" "target"]
 
-  :uberjar-name "material-reagent-standalone.jar"
-  :profiles {:uberjar {:aot :all
-                       :main material-reagent.server
-                       :hooks [leiningen.cljsbuild]}})
+  ;; :uberjar-name "material-reagent-standalone.jar"
+  ;; :profiles {:uberjar {:aot :all
+  ;;                      :main material-reagent.server
+  ;;                      :hooks [leiningen.cljsbuild]}}
+  )
