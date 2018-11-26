@@ -1,5 +1,5 @@
-(defproject minimal-webapp "0.1.0-SNAPSHOT"
-  :description "Minimal webapp using ClojureScript, Compojure, and Reagent"
+(defproject material-reagent "0.1.0-SNAPSHOT"
+  :description "Another shot at a reagent wrapper for material-ui"
   :url "https://github.com/raxod502/minimal-webapp"
   :license {:name "MIT License"
             :url "http://www.opensource.org/licenses/mit-license.php"}
@@ -26,15 +26,15 @@
   :cljsbuild {:builds [{:id "main"
                         :source-paths ["src"]
                         :figwheel true
-                        :compiler {:main "minimal-webapp.pages.splash"
+                        :compiler {:main "material-reagent.pages.splash"
                                    :output-to "resources/public/js/main.js"
                                    :output-dir "resources/public/js/out"
                                    :asset-path "js/out"}}]}
-  :figwheel {:ring-handler minimal-webapp.server/site}
+  :figwheel {:ring-handler material-reagent.server/site}
 
   :clean-targets ^{:protect false} ["resources/public" "target"]
 
-  :uberjar-name "minimal-webapp-standalone.jar"
+  :uberjar-name "material-reagent-standalone.jar"
   :profiles {:uberjar {:aot :all
                        :main minimal-webapp.server
                        :hooks [leiningen.cljsbuild]}})
